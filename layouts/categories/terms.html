@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+
+<section id=tags_listing>
+  <ul>
+    {{ range .Site.Taxonomies.categories }}
+      <li>
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title}} ({{.Count}})</a>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+
+{{ partial "footer.html" . }}

@@ -1,3 +1,17 @@
+
   {{ template "_internal/google_analytics_async.html" . }}
-</body>
+</body><section id=footer>
+  &copy
+  {{ .Site.Params.copyright_year }}. All rights reserved.<br> 
+
+    {{ range $index, $value := .Site.Menus.footer }}
+    {{ if ne $index 0 }} 
+    ·
+    {{ end }}
+    <a href="{{ .URL }}">{{ $value.Name }}</a>
+    {{ end }}
+
+
+</section>
+
 </html>
